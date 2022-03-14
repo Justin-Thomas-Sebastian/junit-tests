@@ -35,4 +35,16 @@ public class Student {
         }
         return (double)total / grades.size();
     }
+
+    public void updateGrade(int index, int newGrade){
+        this.getGrades().set(index, newGrade);
+    }
+
+    public void deleteGrade(int index){
+        this.getGrades().remove(index);
+    }
+
+    public String gradesToString(){
+        return this.grades.toString();
+    }
 }

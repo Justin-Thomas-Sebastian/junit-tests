@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StudentTest {
-    private Student testStudent;
+    public Student testStudent;
 
     @Before
     public void setUp(){
@@ -59,5 +59,31 @@ public class StudentTest {
         testStudent.addGrade(70);
         testStudent.addGrade(78);
         assertEquals(85.75, testStudent.getGradeAverage(), 0);
+    }
+
+    @Test
+    public void testUpdateGrade(){
+        testStudent.addGrade(78);
+        testStudent.addGrade(80);
+        testStudent.addGrade(87);
+        testStudent.updateGrade(2, 90);
+        assertEquals(90, testStudent.getGrades().get(2), 0);
+    }
+
+    @Test
+    public void testGradesToString(){
+        testStudent.addGrade(67);
+        testStudent.addGrade(78);
+        testStudent.addGrade(99);
+        assertEquals("[67, 78, 99]", testStudent.gradesToString());
+    }
+
+    @Test
+    public void testDeleteGrade(){
+        testStudent.addGrade(90);
+        testStudent.addGrade(88);
+        testStudent.addGrade(77);
+        testStudent.deleteGrade(1);
+        assertEquals("[90, 77]", testStudent.gradesToString());
     }
 }
