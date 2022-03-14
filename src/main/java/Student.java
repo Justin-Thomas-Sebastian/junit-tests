@@ -9,7 +9,7 @@ public class Student {
     public Student(long id, String name){
         this.id = id;
         this.name = name;
-        grades = new ArrayList<>();
+        this.grades = new ArrayList<>();
     }
 
     public List<Integer> getGrades(){
