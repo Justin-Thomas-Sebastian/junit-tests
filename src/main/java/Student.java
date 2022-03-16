@@ -6,7 +6,7 @@ public class Student {
     private String name;
     private List<Integer> grades;
 
-    public Student(long id, String name){
+    public Student(long id, String name) {
         this.id = id;
         this.name = name;
         this.grades = new ArrayList<>();
